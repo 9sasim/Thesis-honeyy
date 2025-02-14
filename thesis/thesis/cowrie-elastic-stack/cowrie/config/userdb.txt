@@ -1,0 +1,6 @@
+root:x:*
+ubuntu:x:*
+pi:x:*
+admin:x:*
+www:x:*
+sudat:x:sudat

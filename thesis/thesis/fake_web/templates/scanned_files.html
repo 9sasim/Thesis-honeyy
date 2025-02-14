@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/scan.css">
+    <title>Scanned Files</title>
+</head>
+<body>
+    <div class="scanned-files-container">
+        <h1>Scanned Files</h1>
+        <ul>
+            {% for file in files %}
+            <li>
+                <strong>Filename:</strong> {{ file.filename }}<br>
+                <a href="{{ file.virustotal_url }}" target="_blank">VirusTotal Detection</a><br>
+                <strong>SHA256:</strong> {{ file.sha256 }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

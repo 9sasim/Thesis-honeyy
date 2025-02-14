@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  dashboard:
+    image: nginx:latest
+    volumes:
+      - ./dashboard:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"

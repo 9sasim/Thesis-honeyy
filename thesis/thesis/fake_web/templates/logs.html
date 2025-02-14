@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/log.css">
+    <title>Logs</title>
+</head>
+<body>
+    <div class="logs-container">
+        <h1>Logs</h1>
+
+        <h2>File Upload Logs</h2>
+        <ul>
+            {% for log in upload_logs %}
+            <li>
+                <strong>Event:</strong> {{ log.event }}<br>
+                <strong>Filename:</strong> {{ log.filename }}<br>
+                <strong>Path:</strong> {{ log.path }}<br>
+                <strong>Status:</strong> {{ log.status }}<br>
+                <strong>Timestamp:</strong> {{ log.timestamp }}<br>
+                <strong>User IP:</strong> {{ log.user_ip }}
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h2>VirusTotal Logs</h2>
+        <ul>
+            {% for log in virustotal_logs %}
+            <li>
+                <strong>Event:</strong> {{ log.event }}<br>
+                <strong>Filename:</strong> {{ log.filename }}<br>
+                <strong>VirusTotal ID:</strong> {{ log.virustotal_id }}<br>
+                <strong>VirusTotal URL:</strong> <a href="{{ log.virustotal_url }}" target="_blank">{{ log.virustotal_url }}</a><br>
+                <strong>Timestamp:</strong> {{ log.timestamp }}<br>
+                <strong>User IP:</strong> {{ log.user_ip }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
